@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Mi Agenda</title>
+</head>
+<body>
+    <h2>Mi Agenda</h2>
+    <ul>
+        {% for cita in agenda %}
+        <li>{{ cita.date }} {{ cita.time }} - Cubículo: {{ cita.cubicle }} - Paciente: {{ cita.patient if cita.patient else 'Disponible' }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('doctor_menu') }}">Regresar al Menú</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Ordenes</title>
+</head>
+<body>
+    <h2>Mis Ordenes</h2>
+    {% if ordenes %}
+    <ul>
+        {% for orden in ordenes %}
+        <li>Especialidad: {{ orden.specialty }} - Número de Orden: {{ orden.order_number }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No tienes órdenes aprobadas</p>
+    {% endif %}
+    <a href="{{ url_for('user_menu') }}">Regresar al Menú</a>
+</body>
+</html>

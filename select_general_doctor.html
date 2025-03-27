@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seleccionar Doctor de Medicina General</title>
+</head>
+<body>
+    <h2>Seleccionar Doctor de Medicina General</h2>
+    <form method="post" action="{{ url_for('select_general_doctor') }}">
+        <label for="doctor_id">Doctor:</label>
+        <select id="doctor_id" name="doctor_id" required>
+            {% for doctor in doctors %}
+            <option value="{{ doctor.id }}">{{ doctor.name }}</option>
+            {% endfor %}
+        </select><br>
+        <button type="submit">Seleccionar Doctor</button>
+    </form>
+    <a href="{{ url_for('user_menu') }}">Regresar al Menú</a>
+</body>
+</html>

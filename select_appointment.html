@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seleccionar Cita</title>
+</head>
+<body>
+    <h2>Seleccionar Cita</h2>
+    <form method="post" action="{{ url_for('confirm_appointment') }}">
+        <input type="hidden" name="doctor_id" value="{{ doctor_id }}">
+        <label for="appointment_id">Cita:</label>
+        <select id="appointment_id" name="appointment_id" required>
+            {% for appointment in appointments %}
+            <option value="{{ appointment.id }}">{{ appointment.date }} {{ appointment.time }} - Cubículo: {{ appointment.cubicle }}</option>
+            {% endfor %}
+        </select><br>
+        <button type="submit">Confirmar Cita</button>
+    </form>
+    <a href="{{ url_for('user_menu') }}">Regresar al Menú</a>
+</body>
+</html>

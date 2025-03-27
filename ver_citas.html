@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Citas</title>
+</head>
+<body>
+    <h2>Mis Citas</h2>
+    {% if citas %}
+    <ul>
+        {% for cita in citas %}
+        <li>{{ cita.date }} {{ cita.time }} - Doctor: {{ cita.doctor }} - Cubículo: {{ cita.cubicle }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Aún no hay citas agendadas</p>
+    {% endif %}
+    <a href="{{ url_for('user_menu') }}">Regresar al Menú</a>
+</body>
+</html>

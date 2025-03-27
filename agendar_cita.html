@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendar Cita</title>
+</head>
+<body>
+    <h2>Agendar Cita</h2>
+    <form method="post">
+        <label for="order_number">Orden Médica:</label>
+        <input type="text" id="order_number" name="order_number" required><br>
+        <button type="submit">Validar Orden</button>
+    </form>
+    <p>{{ get_flashed_messages() }}</p>
+    <a href="{{ url_for('user_menu') }}">Regresar al Menú</a>
+</body>
+</html>

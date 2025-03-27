@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cancelar Citas</title>
+</head>
+<body>
+    <h2>Cancelar Citas</h2>
+    <form method="post">
+        <label for="appointment_id">Cita:</label>
+        <select id="appointment_id" name="appointment_id" required>
+            {% for cita in citas %}
+            <option value="{{ cita.id }}">{{ cita.date }} {{ cita.time }} - Doctor: {{ cita.doctor }} - Cubículo: {{ cita.cubicle }}</option>
+            {% endfor %}
+        </select><br>
+        <button type="submit">Cancelar Cita</button>
+    </form>
+    <a href="{{ url_for('user_menu') }}">Regresar al Menú</a>
+</body>
+</html>

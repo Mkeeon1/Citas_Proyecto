@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seleccionar Doctor</title>
+</head>
+<body>
+    <h1>Seleccionar Doctor</h1>
+    <form method="post" action="{{ url_for('select_doctor') }}">
+        <label for="doctor">Doctor:</label>
+        <select name="doctor_id" id="doctor">
+            {% for doctor in doctors %}
+                <option value="{{ doctor.id }}">{{ doctor.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Seleccionar</button>
+    </form>
+</body>
+</html>

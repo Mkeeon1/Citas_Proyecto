@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Menu</title>
+</head>
+<body>
+    <h2>Welcome, {{ username }}</h2>
+    <ul>
+        <li><a href="{{ url_for('agendar_cita') }}">Agendar Cita</a></li>
+        <li><a href="{{ url_for('ver_citas') }}">Ver Citas</a></li>
+        <li><a href="{{ url_for('cancelar_citas') }}">Cancelar Citas</a></li>
+        <li><a href="{{ url_for('mis_ordenes') }}">Mis Ordenes</a></li>
+        <li><a href="{{ url_for('mi_perfil') }}">Mi Perfil</a></li>
+        <li><a href="{{ url_for('logout') }}">Salir</a></li>
+    </ul>
+</body>
+</html>
