@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
 # Configuración de MySQL
-app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_HOST'] = '52.41.36.82'
 app.config['MYSQL_PORT'] = 3306  # Asegúrate de que este sea el puerto correcto
 app.config['MYSQL_USER'] = 'root'  # Asegúrate de que este sea el usuario correcto
 app.config['MYSQL_PASSWORD'] = ''  # Deja este campo vacío si no hay contraseña
