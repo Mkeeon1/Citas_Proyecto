@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
+import os  # Importar os para obtener el puerto
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -208,4 +209,9 @@ def logout():
     return redirect(url_for('login'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Obtén el puerto del entorno (Render asignará este puerto)
+    port = int(os.environ.get("PORT", 5000))
+
+    # Ejecuta Flask en el puerto adecuado
+    app.run(debug=True, host='0.0.0.0', port=port)
+
